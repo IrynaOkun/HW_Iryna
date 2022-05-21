@@ -15,8 +15,36 @@ public class HW_10_ {
 //            “QA4Everyone“ → “Пробелов не было”
 //            “” → “Строка пустая”
 
+    public static String checkline(String str) {
+        if (str != null
+            && !str.isEmpty()
+            && str.trim().length() > 0)
+        {
+            if (str.trim().equals(str)) {
+
+                return "Лишние пробелы удалены";
+            } else {
+
+               return  "пробелов не было";
+            }
 
 
+        }
+
+        return "строка пустая";
+    }
+
+    public static void main(String[] args) {
+
+
+        System.out.println(checkline("  QAforeveryone  "));
+        System.out.println(checkline("QAforeveryone"));
+        System.out.println(checkline(""));
+        System.out.println(checkline("  "));
+        System.out.println(checkline(null));
+
+
+    }
 
 
 }
