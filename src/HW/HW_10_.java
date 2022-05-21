@@ -34,14 +34,43 @@ public class HW_10_ {
         return "строка пустая";
     }
 
+//    Написать алгоритм RemoveAlla.
+//    С помощью методов из видео1,  написать алгоритм, который принимает на вход строку.
+//    Если строка валидная, то метод удаляет все буквы a из строки,
+//    если таковые имеются. Метод возвращает обработанную строку.
+//    Test Data:
+//            “    QA4Everyone   “ →  “QA4Everyone“
+//            “panda   “ → “pnd”
+
+    public static String removeAllData(String str) {
+        if (!str.isEmpty()) {
+            str.trim();
+
+            return str.trim().replace("a", "");
+        } else {
+
+            return "Строка пустая";
+        }
+
+    }
+
+
+
+
     public static void main(String[] args) {
 
-
+        System.out.println("TASK 1");
         System.out.println(checkline("  QAforeveryone  "));
         System.out.println(checkline("QAforeveryone"));
         System.out.println(checkline(""));
         System.out.println(checkline("  "));
         System.out.println(checkline(null));
+        System.out.println("_______________________________");
+
+        System.out.println("TASK 2");
+        System.out.println(removeAllData("  QAforeveryone  "));
+        System.out.println(removeAllData("panda"));
+        System.out.println("_______________________________");
 
 
     }
