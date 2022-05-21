@@ -34,7 +34,7 @@ public class HW_10_ {
         return "строка пустая";
     }
 
-//    Написать алгоритм RemoveAlla.
+//    2. Написать алгоритм RemoveAlla.
 //    С помощью методов из видео1,  написать алгоритм, который принимает на вход строку.
 //    Если строка валидная, то метод удаляет все буквы a из строки,
 //    если таковые имеются. Метод возвращает обработанную строку.
@@ -54,6 +54,30 @@ public class HW_10_ {
 
     }
 
+//    3. Написать алгоритм RemoveAllZeros.
+//    С помощью методов из видео1,  написать алгоритм,
+//    который принимает на вход строку, состоящую из цифр.
+//    Если строка валидная, то метод удаляет все пробелы из строки, если таковые имеются.
+//    Метод возвращает обработанную строку, в которой нет нулей.
+//    Test Data:
+//            “   3 5 0 4 2 0 9 7 0 6 0 4 0       0 0 0 “ →  “35429764“
+//            “ 0000000111“ → “111”
+
+
+    public static String removeAllZeros(String str) {
+        if (!str.isEmpty()) {
+            str.trim();
+
+            return str.replace(" ", "").replace("0", "");
+        } else {
+
+            return "Строка пустая";
+        }
+
+
+    }
+
+
 
 
 
@@ -70,6 +94,11 @@ public class HW_10_ {
         System.out.println("TASK 2");
         System.out.println(removeAllData("  QAforeveryone  "));
         System.out.println(removeAllData("panda"));
+        System.out.println("_______________________________");
+
+        System.out.println("TASK 3");
+        System.out.println(removeAllZeros("   3 5 0 4 2 0 9 7 0 6 0 4 0       0 0 0 "));
+        System.out.println(removeAllZeros(" 0000000111"));
         System.out.println("_______________________________");
 
 
