@@ -205,6 +205,43 @@ public class HW_10_ {
     }
 
 
+//    7. Напишите метод, который принимает на вход строку,
+//    и добавляет Кавычки в начале строки,
+//    точку и кавычки в конце строки с помощью метода concat()
+//    Test Data:
+//            “One” → ““One.””
+//            “    TWO  “ → ““TWO.””
+
+    public static String addSimvol(String str) {
+        if (str != null && str.length() > 0) {
+            str = str.trim();
+
+            return "\"" + str + "\".";
+        }
+
+            return " ";
+
+    }
+
+    //var 7.2
+
+    public static String task7Two(String str) {
+        if (!str.isEmpty()) {
+            String str1 = "\"";
+
+            return str1
+                    .concat(str.trim())
+                    .concat(".\"");
+        } else {
+
+            return "Строка пустая";
+        }
+    }
+
+
+
+
+
 
     public static void main(String[] args) {
 
@@ -303,6 +340,17 @@ public class HW_10_ {
                 "//    Look what is best, that best I wish in thee.\n" +
                 "//    This wish I have; then ten times happy me."));
         System.out.println("_______________________________");
+
+        System.out.println("Task 7");
+        System.out.println(addSimvol("One"));
+        System.out.println(addSimvol("    TWO  "));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 7.2");
+        System.out.println(task7Two("One"));
+        System.out.println(task7Two("    TWO  "));
+        System.out.println("_______________________________");
+
 
 
     }
