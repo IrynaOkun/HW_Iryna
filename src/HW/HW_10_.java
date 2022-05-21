@@ -146,6 +146,16 @@ public class HW_10_ {
         }
     }
 
+    public static int task5Variant(String a) {
+
+        return a.length()
+                -
+                a
+                        .toLowerCase()
+                        .replace("a", "")
+                        .length();
+    }
+
 
 
 
@@ -189,9 +199,15 @@ public class HW_10_ {
         System.out.println("_______________________________");
 
 
-        System.out.println("Task 4");
+        System.out.println("Task 5");
         System.out.println(task5("Abracadabra"));
         System.out.println(task5("Homenum Revelio"));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 5 Variant 2");
+        System.out.println(task5("Abracadabra"));
+        System.out.println(task5("Homenum Revelio"));
+        System.out.println("_______________________________");
 
 
     }
