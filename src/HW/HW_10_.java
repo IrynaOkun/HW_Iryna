@@ -1,6 +1,8 @@
 package HW;
 
 import com.sun.source.tree.BreakTree;
+import static utils.validateString.*;
+
 
 public class HW_10_ {
 
@@ -156,7 +158,51 @@ public class HW_10_ {
                         .length();
     }
 
+//    6. Напишите метод, который принимает на вход текст и проверяет,
+//    содержится ли в тексте хотя бы одно слово Java.
+//    Test Data:
+//            “As of March 2022, Java 18 is the latest version,
+//    while Java 17, 11 and 8 are the current long-term support (LTS) versions.
+//    Oracle released the last zero-cost public update for the legacy version Java 8 LTS
+//    in January 2019 for commercial use, although it will otherwise still support Java 8
+//    with public updates for personal use indefinitely.
+//    Other vendors have begun to offer zero-cost builds of OpenJDK 8
+//    and 11 that are still receiving security and other upgrades.” → true
+//
+//            “As a decrepit father takes delight
+//    To see his active child do deeds of youth,
+//    So I, made lame by fortune’s dearest spite,
+//    Take all my comfort of thy worth and truth.
+//    For whether beauty, birth, or wealth, or wit,
+//    Or any of these all, or all, or more,
+//    Entitled in thy parts do crownèd sit,
+//    I make my love engrafted to this store.
+//    So then I am not lame, poor, nor despised,
+//    Whilst that this shadow doth such substance give
+//    That I in thy abundance am sufficed,
+//    And by a part of all thy glory live.
+//    Look what is best, that best I wish in thee.
+//    This wish I have; then ten times happy me.” → false
 
+    public static boolean iscontainsJavaWord (String str) {
+
+        return str.trim().contains("Java");
+
+    }
+
+    //Variant_second
+
+    public static boolean isContainJavaW(String str) {
+        if (isStringValid(str)) {
+            str = str.trim();
+
+            return str.contains("Java");
+        }
+
+        System.out.println("ERROR");
+
+        return false;
+    }
 
 
 
@@ -207,6 +253,55 @@ public class HW_10_ {
         System.out.println("Task 5 Variant 2");
         System.out.println(task5("Abracadabra"));
         System.out.println(task5("Homenum Revelio"));
+        System.out.println("_______________________________");
+
+
+        System.out.println("Task 6");
+        System.out.println(iscontainsJavaWord("As of March 2022, Java 18 is the latest version,\n" +
+                "//    while Java 17, 11 and 8 are the current long-term support (LTS) versions.\n" +
+                "//    Oracle released the last zero-cost public update for the legacy version Java 8 LTS\n" +
+                "//    in January 2019 for commercial use, although it will otherwise still support Java 8\n" +
+                "//    with public updates for personal use indefinitely.\n" +
+                "//    Other vendors have begun to offer zero-cost builds of OpenJDK 8\n" +
+                "//    and 11 that are still receiving security and other upgrades."));
+        System.out.println(iscontainsJavaWord("As a decrepit father takes delight\n" +
+                "//    To see his active child do deeds of youth,\n" +
+                "//    So I, made lame by fortune’s dearest spite,\n" +
+                "//    Take all my comfort of thy worth and truth.\n" +
+                "//    For whether beauty, birth, or wealth, or wit,\n" +
+                "//    Or any of these all, or all, or more,\n" +
+                "//    Entitled in thy parts do crownèd sit,\n" +
+                "//    I make my love engrafted to this store.\n" +
+                "//    So then I am not lame, poor, nor despised,\n" +
+                "//    Whilst that this shadow doth such substance give\n" +
+                "//    That I in thy abundance am sufficed,\n" +
+                "//    And by a part of all thy glory live.\n" +
+                "//    Look what is best, that best I wish in thee.\n" +
+                "//    This wish I have; then ten times happy me."));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 6.2");
+        System.out.println(iscontainsJavaWord("As of March 2022, Java 18 is the latest version,\n" +
+                "//    while Java 17, 11 and 8 are the current long-term support (LTS) versions.\n" +
+                "//    Oracle released the last zero-cost public update for the legacy version Java 8 LTS\n" +
+                "//    in January 2019 for commercial use, although it will otherwise still support Java 8\n" +
+                "//    with public updates for personal use indefinitely.\n" +
+                "//    Other vendors have begun to offer zero-cost builds of OpenJDK 8\n" +
+                "//    and 11 that are still receiving security and other upgrades."));
+        System.out.println(iscontainsJavaWord("As a decrepit father takes delight\n" +
+                "//    To see his active child do deeds of youth,\n" +
+                "//    So I, made lame by fortune’s dearest spite,\n" +
+                "//    Take all my comfort of thy worth and truth.\n" +
+                "//    For whether beauty, birth, or wealth, or wit,\n" +
+                "//    Or any of these all, or all, or more,\n" +
+                "//    Entitled in thy parts do crownèd sit,\n" +
+                "//    I make my love engrafted to this store.\n" +
+                "//    So then I am not lame, poor, nor despised,\n" +
+                "//    Whilst that this shadow doth such substance give\n" +
+                "//    That I in thy abundance am sufficed,\n" +
+                "//    And by a part of all thy glory live.\n" +
+                "//    Look what is best, that best I wish in thee.\n" +
+                "//    This wish I have; then ten times happy me."));
         System.out.println("_______________________________");
 
 
