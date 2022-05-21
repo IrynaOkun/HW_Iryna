@@ -129,6 +129,22 @@ public class HW_10_ {
 
     }
 
+//    5. Напишите метод, который принимает на вход строку и считает,
+//    сколько букв а или А содержится в строке.
+//    Test Data:
+//            “Abracadabra” → 5
+//            “Homenum Revelio” → 0
+
+    public static int task5(String str) {
+        if (!str.isEmpty()) {
+            str.trim();
+            String str1 = str.toLowerCase().replace("a", "");
+            return str.length() - str1.length();
+        } else {
+
+            return 0;
+        }
+    }
 
 
 
@@ -171,6 +187,11 @@ public class HW_10_ {
         System.out.println(removeAllSpaces("    QA   4  Everyone   "));
         System.out.println(removeAllSpaces("p a     n d a   "));
         System.out.println("_______________________________");
+
+
+        System.out.println("Task 4");
+        System.out.println(task5("Abracadabra"));
+        System.out.println(task5("Homenum Revelio"));
 
 
     }
