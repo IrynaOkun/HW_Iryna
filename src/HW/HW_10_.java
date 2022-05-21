@@ -1,5 +1,7 @@
 package HW;
 
+import com.sun.source.tree.BreakTree;
+
 public class HW_10_ {
 
 //    1. Написать метод, который принимает на вход строку.
@@ -54,6 +56,24 @@ public class HW_10_ {
 
     }
 
+    //variant 2
+
+    public static String removeAl(String str) {
+
+        //if (!isStringNull(str)) {
+            if (!str.isEmpty()) {
+                //str.replaceALL("[a]", "");
+                str = str.trim();
+                str = str.replace("a", " ");
+
+                return str;
+            }
+
+                return " ";
+        }
+
+
+
 //    3. Написать алгоритм RemoveAllZeros.
 //    С помощью методов из видео1,  написать алгоритм,
 //    который принимает на вход строку, состоящую из цифр.
@@ -65,10 +85,19 @@ public class HW_10_ {
 
 
     public static String removeAllZeros(String str) {
-        if (!str.isEmpty()) {
-            str.trim();
+        if (str !=null && str.length() > 0) {
+            //str.trim();
 
-            return str.replace(" ", "").replace("0", "");
+//            String str2 = str.
+//                    replace(" ", "").
+//                    replace("0", "");
+
+            String str2 = str.
+                    trim().
+                    replace(" ", "").
+                    replace("0", "");
+
+            return str2;
         } else {
 
             return "Строка пустая";
@@ -76,6 +105,30 @@ public class HW_10_ {
 
 
     }
+
+//    4. Написать алгоритм RemoveAllSpaces.
+//    С помощью методов из видео1,  написать алгоритм,
+//    который принимает на вход строку.
+//    Если строка валидная, то метод удаляет все пробелы из строки,
+//    если таковые имеются. Метод возвращает обработанную строку.
+//    Test Data:
+//            “    QA   4  Everyone   “ →  “QA4Everyone“
+//            “p a     n d a   “ → “panda”
+
+    public static String removeAllSpaces(String str) {
+        if (!str.isEmpty()) {
+            str = str.trim();
+
+
+            String str2 = str.replace(" ", "");
+            return str2;
+
+            } else {
+            return "Строка пустая";
+        }
+
+    }
+
 
 
 
@@ -96,9 +149,27 @@ public class HW_10_ {
         System.out.println(removeAllData("panda"));
         System.out.println("_______________________________");
 
+        System.out.println("TASK 2_Variant2");
+        String str2 = "  QAforeveryone  ";
+        String str2_1 = "panda";
+
+        System.out.println(removeAl(str2));
+        System.out.println(removeAl(str2_1));
+        //System.out.println(removeAl(nulltring));
+        //System.out.println(removeAl(emptyString));
+        System.out.println("_______________________________");
+
+
         System.out.println("TASK 3");
         System.out.println(removeAllZeros("   3 5 0 4 2 0 9 7 0 6 0 4 0       0 0 0 "));
         System.out.println(removeAllZeros(" 0000000111"));
+        System.out.println(removeAllZeros(null));
+        System.out.println("_______________________________");
+
+
+        System.out.println("Task 4");
+        System.out.println(removeAllSpaces("    QA   4  Everyone   "));
+        System.out.println(removeAllSpaces("p a     n d a   "));
         System.out.println("_______________________________");
 
 
