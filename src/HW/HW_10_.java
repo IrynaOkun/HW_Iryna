@@ -1,6 +1,9 @@
 package HW;
 
 import com.sun.source.tree.BreakTree;
+
+import java.util.Locale;
+
 import static utils.validateString.*;
 
 
@@ -238,7 +241,65 @@ public class HW_10_ {
         }
     }
 
+//    8. Напишите метод, кторый принимает на вход
+//    название города и исправляет написание:
+//    Test Data:
+//            “ташкент” → “Ташкент”
+//            “ЧикаГО” → “Чикаго”
 
+    public static String capitalizeFirstLetter(String entering) {
+        if (entering != null) { //исключаем null
+            entering = entering.trim(); //убираем все пробелы до и после
+            if (entering.length() !=3) {
+                entering = entering
+                        .substring(0, 1)
+                        .toUpperCase()
+                        +
+                        entering
+                                .substring(1)
+                                .toLowerCase();
+            }
+        }
+
+        return entering;
+    }
+
+    //case 8.2
+
+    public static String task8case2(String case2) {
+        if (!case2.isEmpty()) {
+            String str = case2
+                    .trim()
+                    .substring(0, 1)
+                    .toUpperCase();
+
+            return str
+                    .concat(case2.substring(1, case2.length()));
+                   // .toLowerCase();
+        } else {
+
+            return "Строка пустая";
+        }
+    }
+
+    //case8.3
+
+    public static String task8three(String a) {
+        if (!a.isEmpty()) {
+            String str = a
+                    .trim()
+                    .substring(0,1)
+                    .toUpperCase();
+
+            return str
+                    .concat(a.substring(1)
+                    .trim()
+                    .toLowerCase());
+        } else {
+
+            return "Строка пустая";
+        }
+    }
 
 
 
@@ -349,6 +410,22 @@ public class HW_10_ {
         System.out.println("Task 7.2");
         System.out.println(task7Two("One"));
         System.out.println(task7Two("    TWO  "));
+        System.out.println("_______________________________");
+
+
+        System.out.println("Task 8");
+        System.out.println(capitalizeFirstLetter("ташкент"));
+        System.out.println(capitalizeFirstLetter("ЧикаГО"));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 8.2");
+        System.out.println(task8case2("ташкент"));
+        System.out.println(task8case2("ЧикаГО"));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 8.3");
+        System.out.println(task8three("ташкент"));
+        System.out.println(task8three("ЧикаГО"));
         System.out.println("_______________________________");
 
 
