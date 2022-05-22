@@ -301,6 +301,25 @@ public class HW_10_ {
         }
     }
 
+    //case4
+
+    public static String capitalizeFirstLetterTwo(String incoming) {
+        if (incoming != null) {
+            incoming = incoming.trim();
+            if (incoming.length() != 0) {
+                return incoming
+                        .substring(0, 1)
+                        .toUpperCase()
+                        .concat(incoming.substring(1).toLowerCase());
+
+            }
+        }
+
+        return incoming;
+    }
+
+
+
 
 
 
@@ -426,6 +445,11 @@ public class HW_10_ {
         System.out.println("Task 8.3");
         System.out.println(task8three("ташкент"));
         System.out.println(task8three("ЧикаГО"));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 8.4");
+        System.out.println(capitalizeFirstLetterTwo("ташкент"));
+        System.out.println(capitalizeFirstLetterTwo("ЧикаГО"));
         System.out.println("_______________________________");
 
 
