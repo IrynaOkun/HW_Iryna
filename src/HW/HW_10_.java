@@ -341,8 +341,47 @@ public class HW_10_ {
     public static String returnSubString(String str, String parameter) {
 
         return str.substring(str.indexOf(parameter),
-                str.lastIndexOf(parameter));
+                str.lastIndexOf(parameter) + 1);
     }
+
+//    10. Напишите метод, который принимает на вход слово,
+//    и возвращает true, если слово начинается
+//    и заканчивается на одинаковую букву, и false иначе
+//    Test Data:
+//            “Abracadabra” → true
+//            “Whippersnapper” → false
+
+    public static boolean isSameLetter(String str) {
+        str = str.toLowerCase();
+
+        if (str.charAt(0) == str.charAt(str.length() - 1)) {
+
+            return true;
+        }
+
+        return false;
+    }
+
+    //variant_10.2
+
+    public static boolean task10Two(String str) {
+        if (str.trim().toLowerCase().charAt(0)
+        == str.toLowerCase().charAt(str.length() - 1)) {
+
+            return true;
+        } else {
+
+            return false;
+        }
+
+    }
+
+//    11. Напишите метод, который принимает на вход предложение
+//    и возвращает слова из этого предложения в виде массива слов
+//    Test Data:
+//            “QA for Everyone” → {“QA”, “for”, “Everyone”}
+//    “Александр Сергеевич Пушкин” → {“Александр”, “Сергеевич”, “Пушкин”}
+
 
 
 
@@ -487,6 +526,18 @@ public class HW_10_ {
         System.out.println("Task 9.2");
         System.out.println(returnSubString("Abracadabra", "b"));
         System.out.println(returnSubString("Whippersnapper", "p"));
+        System.out.println("_______________________________");
+
+
+
+        System.out.println("Task 10");
+        System.out.println(isSameLetter("Abracadabra"));
+        System.out.println(isSameLetter("Whippersnapper"));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 10.2");
+        System.out.println(task10Two("Abracadabra"));
+        System.out.println(task10Two("Whippersnapper"));
         System.out.println("_______________________________");
 
 
