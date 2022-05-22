@@ -318,7 +318,31 @@ public class HW_10_ {
         return incoming;
     }
 
+//    9. Напишите метод, который принимает на вход строку и букву-параметр,
+//    и возвращает все, что находится между первой и последней буквой-параметром:
+//    Test Data:
+//            “Abracadabra”, “b” → “bracadab”
+//            “Whippersnapper”, “p” → “ppersnapp”
 
+    public static String letterParameter(String str, String a) {
+        if (!str.isEmpty()) {
+
+            return str.trim().substring(str.indexOf(a),
+                    str.trim().lastIndexOf(a) + 1);
+        } else {
+
+            return "Строка пустая";
+        }
+
+    }
+
+    //case 9.2
+
+    public static String returnSubString(String str, String parameter) {
+
+        return str.substring(str.indexOf(parameter),
+                str.lastIndexOf(parameter));
+    }
 
 
 
@@ -450,6 +474,19 @@ public class HW_10_ {
         System.out.println("Task 8.4");
         System.out.println(capitalizeFirstLetterTwo("ташкент"));
         System.out.println(capitalizeFirstLetterTwo("ЧикаГО"));
+        System.out.println("_______________________________");
+
+       // “Abracadabra”, “b” → “bracadab”
+//            “Whippersnapper”, “p” → “ppersnapp”
+
+        System.out.println("Task 9.1");
+        System.out.println(letterParameter("Abracadabra", "b"));
+        System.out.println(letterParameter("Whippersnapper", "p"));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 9.2");
+        System.out.println(returnSubString("Abracadabra", "b"));
+        System.out.println(returnSubString("Whippersnapper", "p"));
         System.out.println("_______________________________");
 
 
