@@ -2,6 +2,7 @@ package HW;
 
 import com.sun.source.tree.BreakTree;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 import static utils.validateString.*;
@@ -352,15 +353,18 @@ public class HW_10_ {
 //            “Whippersnapper” → false
 
     public static boolean isSameLetter(String str) {
-        str = str.toLowerCase();
+        if (isStringValid(str)) {
+            str = str.toLowerCase();
 
-        if (str.charAt(0) == str.charAt(str.length() - 1)) {
+            //if (str.substring(0, 1).equals(str.substring(str.length() -1)));
+            return  (str.charAt(0) == str.charAt(str.length() - 1));
 
-            return true;
+
+            }
+
+            return false;
         }
 
-        return false;
-    }
 
     //variant_10.2
 
@@ -382,7 +386,135 @@ public class HW_10_ {
 //            “QA for Everyone” → {“QA”, “for”, “Everyone”}
 //    “Александр Сергеевич Пушкин” → {“Александр”, “Сергеевич”, “Пушкин”}
 
+    public static String[] task11(String str) {
+        String[] arr = str.trim().split(" ");
 
+        return arr;
+    }
+
+    //11.2
+
+    public static String[] changeStringToArray(String str) {
+        if (str != null && !str.isEmpty()) {
+
+            return  str.split(" ");
+        }
+
+        return new String[] {};
+    }
+
+    //11.3
+
+    public static String[] toStringArray(String str) {
+        if (isStringValid(str)) {
+
+            return  str.split(" ");
+        }
+
+        return new String[] {};
+    }
+
+
+
+
+    //12.Написать метод, который принимает на вход предложение,
+    // которое состоит из имени, фамилии, отчества и возвращает массив строк:
+    //Test Data:
+    //“Александр Сергеевич Пушкин” →
+    //{“Имя: Александр”, “Отчество: Сергеевич”, “Фамилия: Пушкин”}
+
+    public static String[] task12(String str) {
+        String[] arr = str.trim().split(" ");
+        String[] arr1 = {"Имя: ", "Отчество: ", "Фамилия: "};
+                for (int i = 0; i < arr.length; i++) {
+
+                    arr[i] = arr1[i] + arr[i];
+
+        }
+                return arr;
+    }
+
+
+    //task 12.2
+
+    public static String[] getArrayOfName (String name) {
+        //уже проверку можно єту не делать поскольку переиспользуем метод toStringArray, в котором
+        // эта проверка уже есть
+        //        if (!isStringValid(name)) {
+        //            return new String[0];
+        //        }
+
+        String[] result = toStringArray(name);
+
+        result[0] = "Name: " + result[0];
+        result[1] = "Patronymic: " + result[1];
+        result[2] = "Surname: " + result[2];
+        return result;
+    }
+
+
+
+//    13.Написать метод, который возвращает сумму всех букв слова
+//
+//    “abc” → 294
+//            “ABC” → 198
+//            “123” → 0 (это не буквы)
+
+    public static int task13(String str) {
+        String str1 = str.trim();
+        int count = 0;
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.toCharArray()[i] > 64
+                && str1.toCharArray()[i] < 91
+                || str1.toCharArray()[i] > 96
+                && str1.toCharArray()[i] < 123) {
+
+                count += str1.toCharArray()[i];
+            }
+        }
+
+        return count;
+    }
+
+    //13.2
+
+    public static int letterToSymbol(String a) {
+        int sum = 0;
+        for (int i=0; i < a.length(); i++) {
+            if (a.charAt(i) > 64 && a.charAt(i) < 91) {
+                sum += a.charAt(i);
+            } if (a.charAt(i) > 96 && a.charAt(i) < 123) {
+                sum += a.charAt(i);
+            }
+        }
+        return sum;
+
+    }
+
+
+
+
+//    14. Написать метод,  который принимает на вход 2 буквы и
+//    возвращает true, если первая буква встречается раньше второй,
+//    иначе метод возвращает false
+//    method(“a”, “m”) → true
+//    method(“m”, “l”) → false
+
+    public static boolean task14(char a, char b) {
+
+        return a < b;
+    }
+
+    //14.2
+
+    public static boolean task14Two(String str1, String str2) {
+        if (str1.charAt(0) < str2.charAt(0)) {
+
+            return true;
+        }
+
+        return false;
+    }
 
 
 
@@ -538,6 +670,57 @@ public class HW_10_ {
         System.out.println("Task 10.2");
         System.out.println(task10Two("Abracadabra"));
         System.out.println(task10Two("Whippersnapper"));
+        System.out.println("_______________________________");
+
+
+
+        System.out.println("Task 11");
+        System.out.println(Arrays.toString(task11("QA for Everyone")));
+        System.out.println(Arrays.toString(task11("Александр Сергеевич Пушкин")));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 11.2");
+        System.out.println(Arrays.toString(changeStringToArray("QA for Everyone")));
+        System.out.println(Arrays.toString(changeStringToArray("Александр Сергеевич Пушкин")));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 11.3");
+        System.out.println(Arrays.toString(toStringArray("QA for Everyone")));
+        System.out.println(Arrays.toString(toStringArray("Александр Сергеевич Пушкин")));
+        System.out.println("_______________________________");
+
+
+        System.out.println("Task 12");
+        System.out.println(Arrays.toString(task12("Александр Сергеевич Пушкин")));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 12.2");
+        System.out.println(Arrays.toString(getArrayOfName("Александр Сергеевич Пушкин")));
+        System.out.println("_______________________________");
+
+
+        System.out.println("Task 13");
+        System.out.println(task13("abc"));
+        System.out.println(task13("ABC"));
+        System.out.println(task13("123"));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 13.2");
+        System.out.println(letterToSymbol("abc"));
+        System.out.println(letterToSymbol("ABC"));
+        System.out.println(letterToSymbol("123"));
+        System.out.println("_______________________________");
+
+
+
+        System.out.println("Task 14");
+        System.out.println(task14('a', 'm'));
+        System.out.println(task14('m', 'l'));
+        System.out.println("_______________________________");
+
+        System.out.println("Task 14.2");
+        System.out.println(task14Two("a", "m"));
+        System.out.println(task14Two("m", "l"));
         System.out.println("_______________________________");
 
 
